@@ -3,7 +3,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.junit.jupiter.api.Assertions;
@@ -190,8 +189,6 @@ public class ProfileTest {
         wait3.until(ExpectedConditions.urlToBe("https://olx.ba/mojolx/postavke/korisnicke-informacije"));
         Assertions.assertTrue(webDriver.getCurrentUrl().equals("https://olx.ba/mojolx/postavke/korisnicke-informacije"));
     }
-
-
 
     @After
     public void tearDown() {

@@ -3,16 +3,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import java.time.Duration;
-import static org.junit.Assert.assertEquals;
 
 public class OglasTest {
-
     private static WebDriver webDriver;
     private WebDriverWait wait;
     private static String baseUrl;
@@ -32,7 +29,6 @@ public class OglasTest {
         WebElement oglasButton = webDriver.findElement(By.xpath("/html/body/div/div/div/header/div/div[1]/div[2]/div/button"));
         oglasButton.click();
         Thread.sleep(500);
-
         WebElement acceptButton = webDriver.findElement(By.xpath("/html/body/div[1]/div/div/div/div[2]/div/button[2]"));
         acceptButton.click();
 
@@ -108,8 +104,6 @@ public class OglasTest {
     }
 
 
-
-
     @Test
     public void testObjaviOglasFail() throws InterruptedException {
         webDriver.get(baseUrl);
@@ -164,7 +158,6 @@ public class OglasTest {
         continueToNext.click();
 
         WebElement naslovErrorMessage = webDriver.findElement(By.xpath("//small[contains(text(),'Naslov mora imati barem dvije riječi, ne smije biti duži od 55 karaktera i mora biti u latiničnom pismu.')]"));
-
         Assertions.assertNotNull(naslovErrorMessage);
         Assertions.assertTrue(naslovErrorMessage.isDisplayed());
     }

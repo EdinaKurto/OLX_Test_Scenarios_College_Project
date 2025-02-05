@@ -9,9 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
 import java.time.Duration;
-import static org.junit.Assert.assertEquals;
 
 public class RegisterTest {
 
@@ -26,7 +24,6 @@ public class RegisterTest {
         webDriver.manage().window().maximize();
         baseUrl = "https://olx.ba/";
     }
-
 
     @Test
     public void testBasicRegistration() throws InterruptedException {
@@ -84,7 +81,6 @@ public class RegisterTest {
         Assertions.assertTrue(webDriver.getCurrentUrl().equals("https://olx.ba/vodic"));
     }
 
-
     @Test
     public void testInvalidEmail() throws InterruptedException {
         webDriver.get(baseUrl);
@@ -112,11 +108,9 @@ public class RegisterTest {
         Thread.sleep(200);
 
         WebElement emailErrorMessage = webDriver.findElement(By.xpath("//small[contains(text(),'Polje email mora biti validna e-mail addressa.')]"));
-
         Assertions.assertNotNull(emailErrorMessage);
         Assertions.assertTrue(emailErrorMessage.isDisplayed());
     }
-
 
     @Test
     public void testInvalidPassword() throws InterruptedException {
@@ -145,7 +139,6 @@ public class RegisterTest {
         Thread.sleep(200);
 
         WebElement passwordErrorMessage = webDriver.findElement(By.xpath("//small[contains(text(),'Šifra ne smije biti kraća od 8 karaktera')]"));
-
         Assertions.assertNotNull(passwordErrorMessage);
         Assertions.assertTrue(passwordErrorMessage.isDisplayed());
     }

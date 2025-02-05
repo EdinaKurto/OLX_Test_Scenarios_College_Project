@@ -9,7 +9,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import java.time.Duration;
-import static org.junit.Assert.assertEquals;
 
 public class SettingsTest {
     private static WebDriver webDriver;
